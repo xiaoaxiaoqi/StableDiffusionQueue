@@ -1,0 +1,135 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Category')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-category" class="form-control" name="row[category]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" min="0" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-url" class="form-control" name="row[url]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Imagewidth')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-imagewidth" class="form-control" name="row[imagewidth]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Imageheight')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-imageheight" class="form-control" name="row[imageheight]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Imagetype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-imagetype" class="form-control" name="row[imagetype]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Imageframes')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-imageframes" data-rule="required" min="0" class="form-control" name="row[imageframes]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Filename')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-filename" class="form-control" name="row[filename]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Filesize')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-filesize" data-rule="required" min="0" class="form-control" name="row[filesize]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Mimetype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mimetype" class="form-control" name="row[mimetype]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Extparam')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-extparam" class="form-control" name="row[extparam]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uploadtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uploadtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[uploadtime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Storage')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-storage" data-rule="required" class="form-control" name="row[storage]" type="text" value="local">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sha1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sha1" class="form-control" name="row[sha1]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Models')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-models" class="form-control" name="row[models]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Parameters')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-parameters" class="form-control " rows="5" name="row[parameters]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Info')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-info" class="form-control " rows="5" name="row[info]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_public')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-is_public" class="form-control selectpicker" name="row[is_public]">
+                {foreach name="isPublicList" item="vo"}
+                    <option value="{$key}" {in name="key" value="0"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('View_count')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-view_count" class="form-control" name="row[view_count]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Download_count')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-download_count" class="form-control" name="row[download_count]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

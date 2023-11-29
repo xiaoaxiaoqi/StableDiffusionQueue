@@ -1,0 +1,147 @@
+<style>
+    .color-picker {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .fc-color-picker li.selected a i {
+        border: 1px solid #333; /* 选中时的边框样式 */
+    }
+
+    .fc-color-picker li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fc-color-picker li a p {
+        font-size: 18px;
+    }
+
+    .carousel-inner img {
+        width: 100%; /* 确保轮播图片充满容器 */
+        height: 100%;
+    }
+
+    .img-selected {
+        border: 1px solid #333; /* 这里可以是你想要的边框样式 */
+    }
+
+    .scroll-box {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <!-- 左边占据4列 -->
+        <div class="col-md-4">
+            <form id="txt2img-form" role="form" data-toggle="validator"
+                  method="POST" action="">
+                <div class="scroll-box">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">创意描述</div>
+                        <div class="panel-body">
+                            <!-- 放置<textarea>在这里 -->
+                            <textarea id="c-prompt" class="form-control form-group" rows="4" name="prompt"
+                                      placeholder="正向提示词"></textarea>
+                            <textarea id="c-negative_prompt" class="form-control" rows="4"
+                                      name="negative_prompt"
+                                      placeholder="反向提示词"></textarea>
+                            <input type="text" id="modelsInput" class="hidden" name="models">
+                            <input type="text" id="sizeInput" class="hidden" name="size">
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">图片比例</div>
+                        <div class="panel-body">
+                            <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                <ul class="fc-color-picker" id="color-chooser">
+                                    <li><a class="text-green" href="#"><i class="fa fa-square fa-3x"></i>
+                                        <p>1:1</p></a></li>
+                                    <li><a class="text-lime" href="#"><i class="fa fa-square fa-3x"></i>
+                                        <p>3:2</p></a></li>
+                                    <li><a class="text-red" href="#"><i class="fa fa-square fa-3x"></i>
+                                        <p>3:4</p></a></li>
+                                    <li><a class="text-purple" href="#"><i class="fa fa-square fa-3x"></i>
+                                        <p>9:16</p></a></li>
+                                    <li><a class="text-fuchsia" href="#"><i class="fa fa-square fa-3x"></i>
+                                        <p>16:9</p></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">风格模型</div>
+                            <div class="panel-body">
+                                <div class="timeline-body" style="display: flex;flex-wrap: wrap;">
+                                    {foreach $models as $key=>$vo }
+                                    <div style="display: flex;flex-direction: column;align-items: center">
+                                        <img class="m-1" src="{$vo.image}" alt="..." data-models="{$vo.data}"
+                                             style="width: 100px;height: 100px">
+                                        <p style="font-size: 13px">{$vo.name}</p>
+                                    </div>
+                                    {/foreach}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <button type="submit" class="btn btn-block btn-success btn-submit p-3">生成</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- 右边占据8列 -->
+        <div class="col-md-8">
+            <div class="row">
+                <div class="tips-demo">
+                    <div class="tips" style="text-align: center">
+                        <h4>创作小提示</h4>
+                        <h6>输入想要创作的图片描述，即可一键生成</h6>
+                    </div>
+                    <div style="border: 1px dashed #ccc; padding: 15px;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img class="img-responsive demo-image" src="{$demo[0]['image']}" alt="Photo"
+                                     style="width: 100%">
+                                <p class="demo-prompt mt-2"
+                                   style="border: 1px solid #ccc;padding: 15px;border-radius: 5px">{$demo[0]['prompt']}</p>
+                                <button type="button" class="btn btn-block btn-success-light btn-padding">使用当前提示词
+                                </button>
+                            </div>
+                            <!-- /.col -->
+                            <div class="demo-list" style="display: flex;flex-wrap: wrap;justify-content: center">
+                                {foreach $demo as $key=>$vo }
+                                <img class="img-responsive m-2" style="width: 300px;height: 300px" src="{$vo.image}"
+                                     data-prompt="{$vo.prompt}" alt="Photo">
+                                {/foreach}
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </div>
+                </div>
+                <div class="result">
+                    <p class="queue"></p>
+                    <div class="res">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <span class="progress-text">40%</span>
+                            </div>
+                        </div>
+                        <img class="img-responsive" id="myImage" src="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

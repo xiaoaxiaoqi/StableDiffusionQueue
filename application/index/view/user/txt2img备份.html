@@ -1,0 +1,46 @@
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">文生图</h2>
+                    <form id="txt2img-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+                        {:token()}
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12">
+                                <textarea id="c-prompt" class="form-control" rows="3" name="prompt" placeholder="正向提示词"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12">
+                                <textarea id="c-negative-prompt" class="form-control" rows="3" name="negative_prompt" placeholder="反向提示词"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group normal-footer">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('Submit')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="queue"></p>
+                    <div class="res">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: 0%;">
+                                <span class="progress-text">40%</span>
+                            </div>
+                        </div>
+                        <img class="img-rounded" id="myImage"  src="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

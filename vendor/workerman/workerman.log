@@ -1,0 +1,56 @@
+2023-11-09 23:59:55 pid:4551 Workerman[start.php] start in DEBUG mode
+2023-11-10 00:00:20 pid:4551 Workerman[start.php] stopping ...
+2023-11-10 00:00:20 pid:4551 Workerman[start.php] has been stopped
+2023-11-10 00:01:18 pid:4802 Workerman[start.php] start in DEBUG mode
+2023-11-10 00:01:25 pid:4802 Workerman[start.php] stopping ...
+2023-11-10 00:01:25 pid:4802 Workerman[start.php] has been stopped
+2023-11-10 00:01:36 pid:4868 Workerman[start.php] start in DEBUG mode
+2023-11-10 00:11:37 pid:4868 Workerman[start.php] stopping ...
+2023-11-10 00:11:37 pid:4868 Workerman[start.php] has been stopped
+2023-11-10 00:11:39 pid:5217 Workerman[start.php] start in DEBUG mode
+2023-11-10 11:01:37 pid:7165 Workerman[start.php] start in DEBUG mode
+2023-11-10 11:01:37 pid:7165 Workerman[start.php] already running
+2023-11-10 11:02:38 pid:7431 Workerman[start.php] start in DEBUG mode
+2023-11-10 11:02:38 pid:7431 Workerman[start.php] already running
+2023-11-10 11:03:44 pid:7513 Workerman[start.php] restart 
+2023-11-10 11:03:44 pid:7513 Workerman[start.php] is stopping ...
+2023-11-10 11:03:44 pid:5217 Workerman[start.php] stopping ...
+2023-11-10 11:03:45 pid:5217 Workerman[start.php] has been stopped
+2023-11-10 11:03:45 pid:7513 Workerman[start.php] stop success
+2023-11-10 11:50:22 pid:7513 Workerman[start.php] stopping ...
+2023-11-10 11:50:22 pid:7513 Workerman[start.php] has been stopped
+2023-11-10 11:50:40 pid:9923 Workerman[start.php] restart 
+2023-11-10 11:50:40 pid:9923 Workerman[start.php] is stopping ...
+2023-11-10 11:50:40 pid:9923 Workerman[start.php] stop success
+2023-11-10 13:32:53 pid:9923 Workerman[start.php] stopping ...
+2023-11-10 13:32:53 pid:9923 Workerman[start.php] has been stopped
+2023-11-10 13:32:54 pid:20402 Workerman[start.php] restart 
+2023-11-10 13:32:54 pid:20402 Workerman[start.php] is stopping ...
+2023-11-10 13:32:54 pid:20402 Workerman[start.php] stop success
+2023-11-10 13:32:58 pid:20404 Error: Call to undefined function config() in /www/wwwroot/192.168.1.72/application/push/Events.php:56
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b54000...', Array)
+#1 /www/wwwroot/192.168.1.72/vendor/workerman/gateway-worker/src/BusinessWorker.php(385): call_user_func('Events::onMessa...', '7f0000010b54000...', '{"type":"bind",...')
+#2 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Connection/TcpConnection.php(646): GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Events/Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #65)
+#4 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Worker.php(1635): Workerman\Events\Select->loop()
+#5 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#6 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Worker.php(1400): Workerman\Worker::forkWorkersForLinux()
+#7 /www/wwwroot/192.168.1.72/vendor/workerman/workerman/Worker.php(560): Workerman\Worker::forkWorkers()
+#8 /www/wwwroot/192.168.1.72/start.php(37): Workerman\Worker::runAll()
+#9 {main}
+2023-11-10 13:32:58 pid:20402 worker[YourAppBusinessWorker:20404] exit with status 64000
+2023-11-10 13:33:46 pid:20402 Workerman[start.php] stopping ...
+2023-11-10 13:33:46 pid:20402 Workerman[start.php] has been stopped
+2023-11-10 13:33:48 pid:20466 Workerman[start.php] restart 
+2023-11-10 13:33:48 pid:20466 Workerman[start.php] is stopping ...
+2023-11-10 13:33:48 pid:20466 Workerman[start.php] stop success
+2023-11-10 15:27:09 pid:20466 Workerman[start.php] stopping ...
+2023-11-10 15:27:09 pid:20466 Workerman[start.php] has been stopped
+2023-11-10 15:27:10 pid:27520 Workerman[start.php] restart 
+2023-11-10 15:27:10 pid:27520 Workerman[start.php] is stopping ...
+2023-11-10 15:27:10 pid:27520 Workerman[start.php] stop success
+2023-11-12 13:21:33 pid:6085 Workerman[start.php] start in DEBUG mode
+2023-11-12 19:50:07 pid:6085 Workerman[start.php] stopping ...
+2023-11-12 19:50:07 pid:6085 Workerman[start.php] has been stopped
+2023-11-16 13:01:25 pid:4456 Workerman[start.php] start in DEBUG mode
